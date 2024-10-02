@@ -57,6 +57,8 @@ type MyHandler struct{}
 var urls map[string]string
 
 func main() {
+	urls = make(map[string]string)
+
 	mux := http.NewServeMux()
 	mux.HandleFunc(`/`, shortenURL)
 	if err := run(); err != nil {
